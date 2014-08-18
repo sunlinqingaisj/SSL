@@ -1,0 +1,52 @@
+body{
+	width: 960px;
+	margin: 0 auto;
+}
+
+h1{
+	font-family: 'Eurostile';
+}
+
+a{
+	text-decoration: none;
+	color: #A68C69;
+}
+a:hover{
+	color: #594433;
+}
+
+input{
+	width: 800px;
+	height: 40px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+
+.button{
+	text-decoration: none;
+	color: #ececec;
+	background: #ef3852;
+	/*margin-left: 610px;*/
+	border-radius: 0 10px 0px 10px;
+	display: block;
+	width: 74px;
+	height: 30px;
+	font-size: 18px;
+	/*padding-top: 20px; */
+	text-align: center;
+	font-family: 'Eurostile';
+	float: right;
+	margin-top: -40px;
+	margin-right: 40px; 
+}
+
+#addNew{
+	width: 100px;
+	height: 30px;
+	padding-top: 10px;
+}
+
+#form{
+	width: 960px;
+	background-color: #c3c3c3;
+}

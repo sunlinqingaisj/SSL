@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>City Search</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script type="text/javascript">
+  $(function() {
+    $(#cityresopnse).autocomplete({
+      source: 'models/cityresopnse.php'
+    });
+  });
+  </script>
+  <script type="text/javascript">
+    function checkcity(cityentered){
+  var xmlhttp;
+  if(window.XMLHttpRequest){
+   xmlhttp = new XMLHttpRequest();
+  }
+  xmlhttp.onreadystatechange = function(){
+   if(xmlhttp.readyState==4 && xmlhttp.status==200){
+     document.getElementById('cityresponse').innerHTML = xmlhttp.responseText;
+   }
+  }
+  xmlhttp.open("GET", "models/cityresponse.PHP?cityget=" + cityentered, true);
+  xmlhttp.send();
+
+}
+  </script>
+</head>
+<body>
+ 
+<div class="ui-widget"  id='form'>
+  <form action="index.php" method="get">
+    <h1>Enter Your City</h1>
+  <input type="text" name='city' id='city' placeholder='Enter City Name' onkeyup="checkcity(this.value)"/></br>
+  <input type="hidden" id="action" name="action"  value="form"/>
+  <input type="hidden" id="execute" name="execute"  value="getCity"/>
+  <input type="submit" class="button"0></br>
+  <div id='cityresponse'></div>
+  </form>
+</div>
+</body>
+</html>
